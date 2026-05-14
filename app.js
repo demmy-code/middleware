@@ -8,6 +8,11 @@ const myLogger = function (req, res, next) {
 
 app.use(myLogger)
 
+app.use((req, res, next) => {
+  console.log('Time:', Date.now())
+  next()
+})
+
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })

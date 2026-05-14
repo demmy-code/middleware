@@ -30,4 +30,14 @@ app.get('/new', (req, res) => {
   res.send(responseText)
 })
 
+app.use('/user/:id', (req, res, next) => {
+  console.log(req)
+  next()
+})
+
+app.get('/user/:id', (req, res, next) => {
+  res.send('USER')
+})
+
+
 app.listen(3030)
